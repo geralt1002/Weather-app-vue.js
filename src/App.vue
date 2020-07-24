@@ -1,19 +1,17 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
     <router-view :key="$route.fullPath" />
   </div>
 </template>
-
 <style lang="scss">
 * {
   box-sizing: border-box;
 }
 body {
-  background: #2c3e50;
+  margin: 0;
+  height: 100%;
+  background: no-repeat fixed
+    linear-gradient(0deg, rgba(67, 0, 252, 1) 1%, rgba(45, 175, 253, 1) 100%);
   color: #fff;
 }
 #app {
