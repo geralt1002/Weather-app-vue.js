@@ -1,5 +1,7 @@
 # weather-app-vue.js
 
+Live: https://geralt1002.github.io/Weather-app-vue.js/
+
 ![app preview](https://github.com/geralt1002/Weather-app-vue.js/blob/master/screen_app.png)
 
 ## Project setup
