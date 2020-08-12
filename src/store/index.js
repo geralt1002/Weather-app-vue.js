@@ -5,13 +5,13 @@ import apiRequest from '../services/api-request'
 import apiClient from '../services/services'
 
 Vue.use(Vuex)
-
 export default new Vuex.Store({
   state: {
     dataIsRecived: false,
     currentWeather: {},
     forecastWeather: [],
     searchCity: '',
+    isError: false,
   },
   mutations: {
     setlocation: (state, city) => (state.searchCity = city),
@@ -19,8 +19,8 @@ export default new Vuex.Store({
       (state.currentWeather = currentWeather),
     forecastWeather: (state, forecastWeather) =>
       (state.forecastWeather = forecastWeather),
+    setError: (state, isError) => (state.isError = isError),
   },
-
   actions: {
     fetchWeather({ state, commit }, city) {
       axios
@@ -41,11 +41,15 @@ export default new Vuex.Store({
               'forecastWeather',
               forecast.data.list.filter((forecast) => forecast['dt_txt'])
             )
-            // console.log(forecast.data.list)
+
+            setTimeout(() => {
+              commit('setError', false)
+            }, 400)
           })
         )
+
         .catch((error) => {
-          //  console.log(error)
+          commit('setError', true)
         })
     },
   },

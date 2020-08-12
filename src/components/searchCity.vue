@@ -5,9 +5,20 @@
         @submit.prevent="getWeather"
         id="fieldset-1"
         class="m-auto p-4 form-search-city"
-        label="Wpisz nazwe miasta"
+        label="Wpisz nazwę miasta"
         label-for="input-1"
       >
+        <transition name="fade">
+          <b-alert
+            class="error"
+            @keyup="show = !show"
+            v-if="isError"
+            variant="danger"
+            dismissible
+            show
+            >Nie znaleziono miasta, proszę spróbować jeszcze raz</b-alert
+          >
+        </transition>
         <b-form-input
           id="input-1"
           v-model="searchCity"
@@ -22,18 +33,22 @@
 </template>
 
 <script>
-import store from '../store/index'
-import { mapActions } from 'vuex'
+import { mapActions, mapState } from 'vuex'
 
 export default {
-  name: 'Weather',
+  name: 'search',
   data() {
     return {
       searchCity: null,
+      error: null,
+      show: true,
     }
   },
   methods: {
     ...mapActions({ getWeather: 'fetchWeather' }),
+  },
+  computed: {
+    ...mapState(['isError']),
   },
 }
 </script>
@@ -41,5 +56,16 @@ export default {
 <style scoped lang="scss">
 .form-search-input {
   font-size: 1.7rem;
+}
+.error {
+  margin-bottom: 0.3rem;
+}
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s;
+}
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
 }
 </style>

@@ -113,7 +113,7 @@ import { WiIcon } from '../mixins/js/wi_icon_mixin'
 export default {
   mixins: [dateSettings, WiIcon],
 
-  name: 'WeatherInfo',
+  name: 'current',
   methods: {
     direction(direction) {
       if (
