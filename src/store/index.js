@@ -31,12 +31,12 @@ export default new Vuex.Store({
         .then(
           axios.spread(function (current, forecast) {
             state.dataIsRecived = true
-            //response1 is the result of first call
+            //response 1
             commit('currentWeather', current.data)
             // console.log(current.data)
 
             state.dataIsRecived = true
-            //response2 is the result of second call
+            //response 2
             commit(
               'forecastWeather',
               forecast.data.list.filter((forecast) => forecast['dt_txt'])

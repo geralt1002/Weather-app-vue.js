@@ -1,33 +1,39 @@
 <template>
-  <div class="d-flex">
-    <b-container
-      fluid="sm"
-      class="d-flex"
-      v-if="this.$store.state.dataIsRecived"
-    >
-      <a class="btn btn_left" @click="swipeLeft">
-        <font-awesome-icon icon="caret-left" />
-      </a>
-      <b-row
-        class="container d-flex flex-nowrap mt-2"
-        id="content"
-        ref="content"
+  <div>
+    <transition name="fade">
+      <div
+        class="d-flex flex-center-mixin"
+        v-if="this.$store.state.dataIsRecived"
       >
-        <b-col
-          cols="2"
-          class="ml-1 mr-5"
-          v-for="forecast in forecast"
-          :key="forecast.dt"
+        <a class="btn btn_left flex-center-mixin" @click="swipeLeft">
+          <font-awesome-icon icon="caret-left" />
+        </a>
+        <b-row
+          class="container d-flex flex-nowrap mt-2"
+          id="content"
+          ref="content"
         >
-          <p class="m-3 flex-center">{{ time(forecast.dt) }}</p>
-          <i :class="forecast | classWIForecast" class="flex-center wi m-3"></i>
-          <p class="m-3 flex-center">{{ Math.round(forecast.main.temp) }}°C</p>
-        </b-col>
-      </b-row>
-      <a class="btn btn_right" @click="swipeRight">
-        <font-awesome-icon icon="caret-right" />
-      </a>
-    </b-container>
+          <b-col
+            cols="2"
+            class="ml-1 mr-5"
+            v-for="forecast in forecast"
+            :key="forecast.dt"
+          >
+            <p class="m-3 flex-center-mixin">{{ time(forecast.dt) }}</p>
+            <i
+              :class="forecast | classWIForecast"
+              class="flex-center-mixin wi m-3"
+            ></i>
+            <p class="m-3 flex-center-mixin">
+              {{ Math.round(forecast.main.temp) }}°C
+            </p>
+          </b-col>
+        </b-row>
+        <a class="btn btn_right flex-center-mixin" @click="swipeRight">
+          <font-awesome-icon icon="caret-right" />
+        </a>
+      </div>
+    </transition>
   </div>
 </template>
 
@@ -85,22 +91,24 @@ export default {
 </script>
 <style lang="scss">
 @import '../mixins/scss/flex_mixin.scss';
-.flex-center {
+@import '../mixins/scss/animation_mixin.scss';
+.container {
+  overflow-x: auto;
+}
+.btn {
+  cursor: pointer;
+  margin: 0 0.8rem;
+  padding: 0 0.5rem;
+  z-index: 10;
+  font-size: 3rem;
+}
+.flex-center-mixin {
   @include flexCenter;
 }
 .wi {
   font-size: 2rem;
 }
-.container {
-  overflow-x: auto;
-}
-.btn {
-  @include flexCenter;
-  cursor: pointer;
-  margin: auto;
-  padding: 0.1em;
-  z-index: 10;
-  font-size: 3em;
-  background: none;
-}
+
+/* animation */
+@include animation($clock: 5.5s);
 </style>

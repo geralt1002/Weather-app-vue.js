@@ -2,9 +2,11 @@
   <div class="mb-5">
     <h1 class="m-4 header-site">{{ headerSite }}</h1>
 
-    <searchCity />
-    <current />
-    <forecast />
+    <b-container fluid="sm" class="reset">
+      <searchCity />
+      <current />
+      <forecast />
+    </b-container>
   </div>
 </template>
 
@@ -23,4 +25,9 @@ export default {
   },
 }
 </script>
-<style lang="scss"></style>
+<style lang="scss">
+.reset {
+  padding: 0;
+  margin: 0 auto;
+}
+</style>

@@ -1,0 +1,12 @@
+/* animation */
+@mixin animation($clock){
+   .fade-enter-active,
+   .fade-leave-active {
+     transition: opacity $clock;
+   }
+   .fade-enter,
+   .fade-leave-to {
+     opacity: 0;
+   }
+   
+}

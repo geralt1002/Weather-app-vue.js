@@ -1,6 +1,6 @@
 <template>
   <div>
-    <b-container fluid="sm">
+    <div>
       <b-form-group
         @submit.prevent="getWeather"
         id="fieldset-1"
@@ -16,7 +16,7 @@
             variant="danger"
             dismissible
             show
-            >Nie znaleziono miasta, proszę spróbować jeszcze raz</b-alert
+            >Nie znaleziono miasta</b-alert
           >
         </transition>
         <b-form-input
@@ -28,7 +28,7 @@
           trim
         ></b-form-input>
       </b-form-group>
-    </b-container>
+    </div>
   </div>
 </template>
 
@@ -54,18 +54,16 @@ export default {
 </script>
 
 <style scoped lang="scss">
+@import '../mixins/scss/animation_mixin.scss';
+
 .form-search-input {
   font-size: 1.7rem;
 }
 .error {
   margin-bottom: 0.3rem;
 }
-.fade-enter-active,
-.fade-leave-active {
-  transition: opacity 0.5s;
-}
-.fade-enter,
-.fade-leave-to {
-  opacity: 0;
-}
+
+/**animation */
+
+@include animation($clock: 0.5s);
 </style>

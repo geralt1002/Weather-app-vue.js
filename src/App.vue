@@ -7,6 +7,9 @@
 * {
   box-sizing: border-box;
 }
+html {
+  font-size: 16px;
+}
 body {
   margin: 0;
   height: 100%;
@@ -19,18 +22,5 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-}
-
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #fff;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
 }
 </style>
