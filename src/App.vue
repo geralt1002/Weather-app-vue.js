@@ -1,26 +1,15 @@
 <template>
-  <div id="app">
-    <router-view :key="$route.fullPath" />
+  <div id="mainApp">
+    <RouterView />
   </div>
 </template>
-<style lang="scss">
-* {
-  box-sizing: border-box;
+
+<script>
+import { RouterView } from 'vue-router'
+
+export default {
+  components: { RouterView },
 }
-html {
-  font-size: 16px;
-}
-body {
-  margin: 0;
-  height: 100%;
-  background: no-repeat fixed
-    linear-gradient(0deg, rgba(67, 0, 252, 1) 1%, rgba(45, 175, 253, 1) 100%);
-  color: #fff;
-}
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-}
-</style>
+</script>
+
+<style lang="scss"></style>

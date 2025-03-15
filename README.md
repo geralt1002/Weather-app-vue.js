@@ -1,28 +1,29 @@
-# weather-app-vue.js
+# weather-app
 
 [Live](https://geralt1002.github.io/Weather-app-vue.js/)
 
-![app preview](https://github.com/geralt1002/Weather-app-vue.js/blob/master/screen_app.png)
+![app preview](https://github.com/geralt1002/Weather-app-vue.js/blob/master/screenshot-app.png)
 
-## Project setup
-```
+## Project Setup
+
+```sh
 npm install
 ```
 
-### Compiles and hot-reloads for development
-```
-npm run serve
+### Compile and Hot-Reload for Development
+
+```sh
+npm run dev
 ```
 
-### Compiles and minifies for production
-```
+### Compile and Minify for Production
+
+```sh
 npm run build
 ```
 
-### Lints and fixes files
-```
+### Lint with [ESLint](https://eslint.org/)
+
+```sh
 npm run lint
 ```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
