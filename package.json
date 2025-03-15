@@ -1,63 +1,35 @@
 {
-  "name": "weather-vue-app",
-  "version": "0.1.0",
+  "name": "weather-app",
+  "version": "2.0.0",
   "private": true,
+  "type": "module",
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "dev": "vite --host 0.0.0.0",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "eslint . --fix",
+    "format": "prettier --write src/"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "^1.2.30",
-    "@fortawesome/free-solid-svg-icons": "^5.14.0",
-    "@fortawesome/vue-fontawesome": "^0.1.10",
-    "axios": "^0.20.0",
-    "bootstrap-vue": "^2.16.0",
-    "core-js": "^3.6.5",
-    "moment": "^2.27.0",
-    "register-service-worker": "^1.7.1",
-    "vue": "^2.6.12",
-    "vue-router": "^3.4.3",
-    "vuex": "^3.5.1"
+    "@splidejs/vue-splide": "^0.6.12",
+    "axios": "^1.8.3",
+    "bootstrap": "^5.3.3",
+    "dayjs": "^1.11.13",
+    "pinia": "^3.0.1",
+    "sass": "^1.85.1",
+    "vue": "^3.5.13",
+    "vue-router": "^4.5.0"
   },
   "devDependencies": {
-    "@babel/polyfill": "^7.10.4",
-    "@vue/cli-plugin-babel": "~4.5.4",
-    "@vue/cli-plugin-eslint": "~4.5.4",
-    "@vue/cli-plugin-pwa": "~4.5.4",
-    "@vue/cli-plugin-router": "~4.5.4",
-    "@vue/cli-plugin-vuex": "~4.5.4",
-    "@vue/cli-service": "~4.5.4",
-    "@vue/eslint-config-prettier": "^6.0.0",
-    "babel-eslint": "^10.1.0",
-    "bootstrap": "^4.5.2",
-    "eslint": "^7.7.0",
-    "eslint-plugin-prettier": "^3.1.4",
-    "eslint-plugin-vue": "^6.2.2",
-    "mutationobserver-shim": "^0.3.7",
-    "node-sass": "^4.14.1",
-    "popper.js": "^1.16.1",
-    "portal-vue": "^2.1.7",
-    "prettier": "^2.0.5",
-    "sass": "^1.26.10",
-    "sass-loader": "^9.0.3",
-    "vue-cli-plugin-bootstrap-vue": "^0.6.0",
-    "vue-template-compiler": "^2.6.12"
-  },
-  "eslintConfig": {
-    "root": true,
-    "env": {
-      "node": true
-    },
-    "extends": [
-      "plugin:vue/essential",
-      "eslint:recommended",
-      "@vue/prettier"
-    ],
-    "parserOptions": {
-      "parser": "babel-eslint"
-    },
-    "rules": {}
+    "@eslint/js": "^9.22.0",
+    "@vitejs/plugin-vue": "^5.2.1",
+    "@vue/eslint-config-prettier": "^10.2.0",
+    "eslint": "^9.22.0",
+    "eslint-plugin-vue": "^10.0.0",
+    "prettier": "^3.5.3",
+    "sass-embedded": "^1.85.1",
+    "vite": "^6.2.1",
+    "vite-plugin-vue-devtools": "^7.7.2"
   },
   "browserslist": [
     "> 1%",
